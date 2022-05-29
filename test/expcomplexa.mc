@@ -1,4 +1,4 @@
-print (10 - 5)
+print (20 - (4 / 2))
 
 
 Arvore sintatica resultante da analise desta expressao:
