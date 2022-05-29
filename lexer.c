@@ -51,7 +51,7 @@ char* TextoToken(long ini, long fim) {
 }
 
 bool simbolo(char c) {
-    return (c == '(' || c == ')' || c == '+' || c == '*');
+    return (c == '(' || c == ')' || c == '+' || c == '-'  ||c == '*');
 }
 
 // função: ProximoToken
@@ -102,6 +102,9 @@ Token* ProximoToken() {
                 break;
             case '+':
                 tok->tipo = TOKEN_SOMA;
+                break;
+            case '-':
+                tok->tipo = TOKEN_SUB;
                 break;
             case '*':
                 tok->tipo = TOKEN_MULT;

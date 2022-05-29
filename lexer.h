@@ -10,6 +10,7 @@ typedef enum tagTipoToken {
     TOKEN_PRINT,
     TOKEN_ERRO,
     TOKEN_SOMA,
+    TOKEN_SUB,
     TOKEN_MULT,
     TOKEN_ABREPAR,
     TOKEN_FECHAPAR,

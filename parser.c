@@ -70,12 +70,18 @@ Expressao* AnaliseExpressao() {
     // operador
     t = ProximoToken();
 
-    if (t->tipo != TOKEN_SOMA && t->tipo != TOKEN_MULT) {
+    if (t->tipo != TOKEN_SOMA && t->tipo != TOKEN_MULT && t->tipo != TOKEN_SUB) {
         fprintf(stderr, "Erro sintatico: operador esperado");
         exit(2);
     }
-
-    res->oper = (t->tipo == TOKEN_SOMA ? OPER_SOMA : OPER_MULT);
+    
+    if (t->tipo == TOKEN_SOMA) {
+        res->oper = OPER_SOMA;
+    } else if (t->tipo == TOKEN_SUB) {
+        res->oper = OPER_SUB;
+    } else if(t->tipo == TOKEN_MULT) {
+        res->oper = OPER_MULT;
+    }
 
     // segundo operando
     res->op2 = AnaliseExpressao();
